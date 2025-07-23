@@ -17,7 +17,7 @@
 &lt { tapping-term-ms = <150>; };
 
 /* BS Corne bodge */
-// &nice_view_spi { cs-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>; };
+&nice_view_spi { cs-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>; };
 
 / {
     conditional_layers {
@@ -57,7 +57,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB       &kp N1    &kp N2     &kp N3     &kp N4            &kp N5            &kp N6           &kp N7             &kp N8        &kp N9                &kp N0                 &kp BSPC
+&kp ESC       &kp N1    &kp N2     &kp N3     &kp N4            &kp N5            &kp N6           &kp N7             &kp N8        &kp N9                &kp N0                 &kp BSPC
 &kp CAPSLOCK  &kp EXCL  &kp AT     &kp HASH   &kp DOLLAR        &kp PERCENT       &kp CARET        &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE
 &kp LSHFT     &trans    &kp TILDE  &kp GRAVE  &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &trans        &trans                &trans                 &kp PIPE
                                    &kp LGUI   &trans            &kp SPACE         &kp RET          &trans             &kp RALT
@@ -74,7 +74,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &none     &none    &kp UNDER   &kp EQUAL    &kp PAGE_UP      &none             &none       &none       &kp BACKSLASH      &kp PIPE         &kp BSPC
+&kp ESC    &none     &none    &kp UNDER   &kp EQUAL    &kp PAGE_UP      &none             &none       &none       &kp BACKSLASH      &kp PIPE         &kp BSPC
 &kp LCTRL  &kp HOME  &kp END  &kp MINUS   &kp PLUS     &kp PAGE_DOWN    &none             &kp LEFT    &kp DOWN    &kp UP_ARROW       &kp RIGHT        &kp RIGHT_GUI
 &kp LSHFT  &trans    &trans   &kp K_COPY  &kp K_PASTE  &trans           &kp K_PLAY_PAUSE  &kp K_PREV  &kp K_NEXT  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp BACKSLASH
                               &kp LGUI    &trans       &kp SPACE        &kp RET           &trans      &kp RALT
@@ -85,7 +85,7 @@
 
         ADJUST {
             bindings = <
-&kp TAB     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6           &kp F7        &kp F8        &kp F9            &kp F10        &kp F11
+&kp ESC     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6           &kp F7        &kp F8        &kp F9            &kp F10        &kp F11
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans           &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP_ARROW)  &kp LC(RIGHT)  &kp F12
 &kp LSHFT   &trans        &trans        &trans        &trans        &out OUT_TOG    &studio_unlock   &trans        &trans        &trans            &trans         &trans
                                         &kp LGUI      &trans        &kp SPACE       &kp RET          &trans        &kp RALT
