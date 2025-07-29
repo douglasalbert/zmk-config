@@ -16,8 +16,9 @@
 
 &lt { tapping-term-ms = <150>; };
 
-/* BS Corne bodge */
-&nice_view_spi { cs-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>; };
+/* BS Corne bodge
+ * &nice_view_spi { cs-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>; };
+ */
 
 / {
     conditional_layers {
@@ -99,6 +100,14 @@
         };
 
         extra2 {
+            status = "reserved";
+        };
+
+        extra3 {
+            status = "reserved";
+        }; 
+
+        extra4 {
             status = "reserved";
         }; 
     };
