@@ -64,6 +64,14 @@
         data-ready-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH)>;
         sensitivity = "2x";
         invert-x;
+        primary-tap-enable;
+        // Report 5 empty packets before declaring finger-up (improves touch-lift reliability)
+        idle-packets-count = <5>;
+
+        // Enable Pinnacle's own auto-sleep (wakes on touch with ~300ms latency).
+        // Without the geeksville idle sleeper we no longer get ZMK-idle-driven shutdown,
+        // so this is the easiest way to reclaim the ~1.2mA savings during keyboard idle.
+        //sleep-mode-enable;
     };
 };
 
