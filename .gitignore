@@ -1,0 +1,9 @@
+/.build
+/.direnv
+/.west
+/firmware
+/modules
+/zephyr
+/zmk
+/zmk-helpers
+/zmk-rgbled-widget
