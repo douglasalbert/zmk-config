@@ -4,12 +4,12 @@
 #include <zephyr/kernel.h>
 #include "util.h"
 
+#define SCREEN_BUF_SIZE (SCREEN_WIDTH * SCREEN_HEIGHT) /* L8: 1 byte/pixel */
+
 struct zmk_widget_screen {
     sys_snode_t node;
     lv_obj_t *obj;
-    lv_color_t cbuf[SCREEN_WIDTH * SCREEN_HEIGHT];
-    lv_color_t cbuf2[SCREEN_WIDTH * SCREEN_HEIGHT];
-    lv_color_t cbuf3[SCREEN_WIDTH * SCREEN_HEIGHT];
+    uint8_t cbuf[SCREEN_BUF_SIZE];
     struct status_state state;
 };
 
