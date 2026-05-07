@@ -1,19 +1,19 @@
 ---
 include:
   # lily58
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: lily58_left nice_view_adapter nice_view
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: lily58_right nice_view_adapter nice_view
 
   # corne
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: corne_left nice_view_adapter nice_view
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: corne_right nice_view_adapter nice_view
 
   # blecorne
@@ -23,21 +23,21 @@ include:
   - board: blecorne_right
 
   # toucan 42
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: toucan_left rgbled_adapter nice_view_gem
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: toucan_right rgbled_adapter
 
   # toucan 36
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: toucan36_left rgbled_adapter nice_view_gem
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: toucan36_right rgbled_adapter
 
-  # settings reset (generic)
-  - board: nice_nano_v2
+  # settings reset
+  - board: nice_nano//zmk
     shield: settings_reset
