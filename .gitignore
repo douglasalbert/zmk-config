@@ -7,3 +7,5 @@
 /zmk
 /zmk-helpers
 /zmk-rgbled-widget
+/draw/*.yaml
+!/draw/config.yaml
