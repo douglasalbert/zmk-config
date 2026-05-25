@@ -27,6 +27,15 @@ config ZMK_SPLIT
 config ZMK_POINTING
     default y
 
+config INPUT_THREAD_PRIORITY_OVERRIDE
+    default y
+
+config INPUT_THREAD_PRIORITY
+    default 8
+
+config INPUT_THREAD_STACK_SIZE
+    default 2048
+
 config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
     default 40
 
