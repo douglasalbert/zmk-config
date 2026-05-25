@@ -39,8 +39,8 @@
                 bindings = <BINDING1>, <BINDING2>;)
 
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMICOLON)
-SIMPLE_MORPH(dot_morph,    SFT, &kp DOT,   &kp COLON)
-SIMPLE_MORPH(qexcl,        SFT, &kp QMARK, &kp EXCL)
+SIMPLE_MORPH(dot_morph,    SFT, &kp DOT,   &kp EXCL)
+SIMPLE_MORPH(bslh_qmark,   SFT, &kp BSLH,  &kp QMARK)
 
 /* ── Smart num (numsword) ────────────────────────────────────────────────────
  *  Tap:       num-word (temporary NUM for one word/sequence)
@@ -106,7 +106,7 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)
 // ├──────────────────┼──────────────────┼──────────────────┼──────────────────┼─────────┤ ├─────────┼──────────────────┼──────────────────┼───────────────┼──────────────────┤
    &hml LGUI A          &hml LALT S        &hml LCTRL D       &hml LSHFT F       &kp G       &kp H     &hmr RSHFT J       &hmr RCTRL K       &hmr RALT L     &hmr RGUI SEMI
 // ├──────────────────┼──────────────────┼──────────────────┼──────────────────┼─────────┤ ├─────────┼──────────────────┼──────────────────┼───────────────┼──────────────────┤
-   &kp Z               &kp X              &kp C              &kp V              &kp B       &kp N     &kp M              &comma_morph       &dot_morph       &qexcl
+   &kp Z               &kp X              &kp C              &kp V              &kp B       &kp N     &kp M              &comma_morph       &dot_morph       &bslh_qmark
 // ╰──────────────────┴──────────────────┴──────────────────┼──────────────────┼─────────┤ ├─────────┼──────────────────┼──────────────────┼───────────────┴──────────────────╯
                                                               &kp LGUI           &lt NAV SPACE   &lt FN RET   &kp BSPC   &smart_num NUM 0   &magic_shift LSHFT 0
 //                                                           ╰──────────────────┴─────────╯ ╰─────────┴──────────────────┴──────────────────╯
