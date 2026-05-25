@@ -95,8 +95,8 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)
          *    ESC   → NAV layer, LT4
          *
          *  Thumb cluster:
-         *    L0: LGUI          L1: NAV/SPACE      L2: FN/RET
-         *    R0: SMART_NUM     R1: MAGIC_SHIFT   R2: RALT
+         *    L0: LGUI          L1: NAV/BSPC       L2: FN/SPACE
+         *    R0: RET           R1: SMART_NUM      R2: MAGIC_SHIFT
          */
         base {
             display-name = "BASE";
@@ -108,7 +108,7 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)
 // ├──────────────────┼──────────────────┼──────────────────┼──────────────────┼─────────┤ ├─────────┼──────────────────┼──────────────────┼───────────────┼──────────────────┤
    &kp Z               &kp X              &kp C              &kp V              &kp B       &kp N     &kp M              &comma_morph       &dot_morph       &bslh_qmark
 // ╰──────────────────┴──────────────────┴──────────────────┼──────────────────┼─────────┤ ├─────────┼──────────────────┼──────────────────┼───────────────┴──────────────────╯
-                                                              &kp LGUI           &lt NAV SPACE   &lt FN RET   &kp BSPC   &smart_num NUM 0   &magic_shift LSHFT 0
+                                                              &kp LGUI           &lt NAV BSPC   &lt FN SPACE   &kp RET   &smart_num NUM 0   &magic_shift LSHFT 0
 //                                                           ╰──────────────────┴─────────╯ ╰─────────┴──────────────────┴──────────────────╯
             >;
         };
