@@ -92,4 +92,13 @@
     };
 };
 
+// kscan0's col-gpios use P0.09/P0.10 (NFC1/NFC2) on both halves. On stock XIAO
+// nRF52840, those ship from the factory reserved for the NFC antenna, not as
+// plain GPIO, so without this they may not read reliably as matrix columns.
+// One-time, applied automatically on first boot after flashing; cannot be
+// undone without a full UICR erase (see nordic,nrf-uicr.yaml).
+&uicr {
+    nfct-pins-as-gpios;
+};
+
 #include "../toucan_trackpad.dtsi"
