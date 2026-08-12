@@ -56,11 +56,11 @@ clean-nix:
     nix-collect-garbage --delete-old
 
 # parse and render SVGs for all keyboards
-draw: (draw-one "lily58") (draw-one "corne") (draw-one "blecorne") (draw-one "toucan") (draw-one "toucan36")
+draw: (draw-one "lily58") (draw-one "corne") (draw-one "blecorne") (draw-one "toucan") (draw-one "toucan36") (draw-one "toucan36" "--with-combos")
 
 # parse and render SVG for one keyboard (name = lily58|corne|blecorne|toucan|toucan36)
-draw-one name:
-    scripts/draw-keymap.sh "{{ name }}"
+draw-one name *args:
+    scripts/draw-keymap.sh "{{ name }}" {{ args }}
 
 # initialize west
 init:

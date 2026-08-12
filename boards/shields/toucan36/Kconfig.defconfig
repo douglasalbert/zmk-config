@@ -33,8 +33,9 @@ config INPUT_THREAD_PRIORITY_OVERRIDE
 config INPUT_THREAD_PRIORITY
     default 8
 
-config INPUT_THREAD_STACK_SIZE
-    default 2048
+# INPUT_THREAD_STACK_SIZE is intentionally NOT set here: Zephyr's subsys/input Kconfig
+# already provides `default 1024` and the first default encountered wins, so a shield
+# default here loses the race. It's set directly in each half's .conf instead.
 
 config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
     default 40

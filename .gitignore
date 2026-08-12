@@ -7,5 +7,9 @@
 /zmk
 /zmk-helpers
 /zmk-rgbled-widget
+/zmk-auto-layer
+/zmk-adaptive-key
+/zmk_driver_azoteq
+/zmk-input-zoom
 /draw/*.yaml
 !/draw/config.yaml
