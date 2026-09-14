@@ -40,7 +40,7 @@
 #include "include/hrm.dtsi"
 
 /* ── Shift morphs (from urob) ────────────────────────────────────────────────
- *  , + Shift → ;    . + Shift → :    ? + Shift → !
+ *  , + Shift → ;    . + Shift → !    \ + Shift → ?
  */
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                     \
@@ -105,6 +105,11 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)
          *  Thumb cluster:
          *    L0: LGUI          L1: NAV/BSPC       L2: FN/SPACE
          *    R0: RET           R1: SMART_NUM      R2: MAGIC_SHIFT
+         *
+         *  SYS is reached only via the FN+NUM conditional layer above —
+         *  there's no dedicated thumb key for it (RALT was dropped too).
+         *
+         *  Punctuation morphs on bottom row: , → ; . → ! \ → ?
          */
         base {
             display-name = "BASE";
@@ -160,7 +165,7 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)
 
         /* FN — function keys + media controls
          *
-         *  Right thumbs: mute + play/pause while FN is held
+         *  Thumbs transparent — mute/play-pause already live on the FN home row.
          */
         fn {
             display-name = "FN";
