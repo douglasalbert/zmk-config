@@ -1,5 +1,10 @@
 if SHIELD_NICE_VIEW_GEM
 
+config TOUCAN_STATUS_SCREEN
+    int "Status screen style (0 to 2)"
+    default 2
+    range 0 2
+
 config LS0XX_VCOM_THREAD_PRIO
     default 11
 
