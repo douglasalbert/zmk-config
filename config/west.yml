@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/urob
     - name: beekeeb
       url-base: https://github.com/beekeeb
+    - name: douglasalbert
+      url-base: https://github.com/douglasalbert
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -28,7 +30,7 @@ manifest:
       remote: beekeeb
       revision: c329f309b7481e5723603550b15f48e24d0c8a6a
     - name: zmk-input-zoom
-      remote: beekeeb
-      revision: 91bbe0c0e02145da50c9df798489479d28be1804
+      remote: douglasalbert
+      revision: 15fbc03e90d55b30b463afab46cdbcb5bf4a8e09 # fork of beekeeb@91bbe0c: guard driver body to fix unused-variable warning
   self:
     path: config
