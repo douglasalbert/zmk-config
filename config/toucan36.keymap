@@ -14,6 +14,7 @@
 #define FN    3
 #define MOUSE 4
 #define SYS   5
+#define WM    6
 
 /* MOUSE must stay at index 4: toucan_trackpad.dtsi's is_touching_processor
  * hard-codes `&mo 4` to activate this layer while the trackpad is touched,
@@ -87,6 +88,14 @@ ZMK_ADAPTIVE_KEY(
 
 /* ── Conditional layer: FN + NUM = SYS ─────────────────────────────────────── */
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)
+
+/* ── Conditional layer: NAV + FN = WM (window manager / multiplexer) ────────── */
+ZMK_CONDITIONAL_LAYER(wm, NAV FN, WM)
+
+/* ── WM direction keys: tap = Alt+letter (AeroSpace focus), hold = Alt+Shift+letter
+ * (AeroSpace move). Params are (hold, tap), same convention as smart_num/magic_shift. */
+ZMK_HOLD_TAP(wm_dir, bindings = <&kp>, <&kp>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <175>;)
 
 / {
     keymap {
@@ -212,8 +221,25 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS)
             >;
         };
 
-        extra_2 {
-                status = "reserved";
+        /* WM — AeroSpace + tmux, reached by holding NAV + FN together
+         *
+         *  Numbers reuse NUM's exact digit positions (workspace jump, Alt+N).
+         *  H/J/K/L: tap = focus in that direction, hold = move window that way.
+         *  U/I/O + , : tmux's no-prefix Alt+Arrow pane switching.
+         */
+        wm {
+            display-name = "WM";
+            bindings = <
+// ╭─────┬──────────┬──────────┬──────────┬─────╮ ╭──────────────┬────────────┬───────────────┬─────┬─────╮
+   ___     &kp LA(N7)  &kp LA(N8)  &kp LA(N9)  ___    ___           &kp LA(LEFT) &kp LA(UP)     &kp LA(RIGHT) ___
+// ├─────┼──────────┼──────────┼──────────┼─────┤ ├──────────────┼────────────┼───────────────┼─────┼─────┤
+   &kp LA(N0)  &kp LA(N4)  &kp LA(N5)  &kp LA(N6)  ___    &wm_dir LA(LS(H)) LA(H)  &wm_dir LA(LS(J)) LA(J)  &wm_dir LA(LS(K)) LA(K)  &wm_dir LA(LS(L)) LA(L)  ___
+// ├─────┼──────────┼──────────┼──────────┼─────┤ ├──────────────┼────────────┼───────────────┼─────┼─────┤
+   ___     &kp LA(N1)  &kp LA(N2)  &kp LA(N3)  ___    ___           ___          &kp LA(DOWN)   ___   ___
+// ╰─────┴──────────┴──────────┼──────────┼─────┤ ├──────────────┼────────────┼───────────────┴─────┴─────╯
+                                ___        ___        ___    ___              ___          ___
+//                             ╰──────────┴─────────╯ ╰──────────────┴────────────┴───────────────╯
+            >;
         };
 
         extra_3 {
