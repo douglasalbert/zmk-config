@@ -1,0 +1,16 @@
+identifier: rechtek
+name: Rechtek
+url: https://boardsource.xyz
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 40
+supported:
+  - adc
+  - usb_device
+  - ble
+  - watchdog
+  - gpio

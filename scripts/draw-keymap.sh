@@ -7,7 +7,7 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DRAW_DIR="$REPO_ROOT/draw"
 CONFIG_DIR="$REPO_ROOT/config"
 
-name="${1:?Usage: draw-keymap.sh <lily58|corne|blecorne|toucan|toucan36>}"
+name="${1:?Usage: draw-keymap.sh <lily58|corne|blecorne|toucan|toucan36|rechtek>}"
 with_combos="${2:-}"
 
 case "$name" in
@@ -25,6 +25,10 @@ case "$name" in
     ;;
   toucan36)
     layout_args="-j $CONFIG_DIR/toucan36.json"
+    keymap_file="${name}.keymap"
+    ;;
+  rechtek)
+    layout_args="-j $CONFIG_DIR/rechtek.json"
     keymap_file="${name}.keymap"
     ;;
   *)
