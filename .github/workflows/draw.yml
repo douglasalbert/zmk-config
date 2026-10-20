@@ -39,6 +39,7 @@ jobs:
           scripts/draw-keymap.sh toucan
           scripts/draw-keymap.sh toucan36
           scripts/draw-keymap.sh toucan36 --with-combos
+          scripts/draw-keymap.sh rechtek
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
