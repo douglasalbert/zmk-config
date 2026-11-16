@@ -38,6 +38,8 @@ include:
   - board: xiao_ble//zmk
     shield: toucan36_right rgbled_adapter
 
-  # settings reset
+  # settings reset (one per board family: the image must match the board's flash layout)
   - board: nice_nano//zmk
+    shield: settings_reset
+  - board: xiao_ble//zmk
     shield: settings_reset
