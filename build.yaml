@@ -46,3 +46,5 @@ include:
   # settings reset
   - board: nice_nano//zmk
     shield: settings_reset
+  - board: rechtek
+    shield: settings_reset

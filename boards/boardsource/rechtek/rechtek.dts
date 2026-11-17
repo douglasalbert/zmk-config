@@ -119,7 +119,7 @@
         full-ohms = <(2000000 + 820000)>;
     };
 
-    ext_power: ext_power {
+    ext_power {
         compatible = "zmk,ext-power-generic";
         control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;
         init-delay-ms = <50>;
@@ -172,6 +172,14 @@
 
 &gpio1 {
     status = "okay";
+};
+
+zephyr_udc0: &usbd {
+    status = "okay";
+};
+
+&uicr {
+    nfct-pins-as-gpios;
 };
 
 &flash0 {
